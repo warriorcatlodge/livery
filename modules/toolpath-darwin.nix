@@ -7,6 +7,13 @@
   options.livery.toolpath.enable = lib.mkEnableOption "the Toolpath theme files at /etc/livery/toolpath";
 
   config = lib.mkIf config.livery.toolpath.enable {
-    environment.etc."livery/toolpath".source = ../themes/toolpath;
+    # builtins.path copies the folder into its own store path. A bare
+    # ../themes/toolpath points inside livery's flake source, which
+    # Determinate Nix's lazy trees never write to disk, so the /etc link
+    # dangled and activation stopped with "ln: ... File exists".
+    environment.etc."livery/toolpath".source = builtins.path {
+      path = ../themes/toolpath;
+      name = "livery-toolpath";
+    };
   };
 }
