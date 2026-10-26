@@ -6,7 +6,7 @@
 
 options=(
   style=round
-  width=5.0
+  width=3.0
   hidpi=on
   # spec: bearing bronze, Vellum shade
   active_color=0xff9C5530
