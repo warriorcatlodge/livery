@@ -1,0 +1,238 @@
+/* ============================================================
+   BENCHMARK — Rev A
+   Land / estate theme · JDC
+   Usage: <html data-theme="benchmark" data-shade="section">
+          shades: "section" (light, default) | "till" (dark)
+          no data-shade: follows prefers-color-scheme
+   Fonts: Bitter (600,700) + Barlow Semi Condensed (400,500,600)
+          + Source Serif 4 (400,600)
+   Spec: benchmark.md
+   ============================================================ */
+
+[data-theme="benchmark"] {
+  --font-display: 'Bitter', Georgia, serif;
+  --font-label: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+}
+
+/* ---- SHADE: SECTION (light) — pale linen plat paper, never cream or white ---- */
+[data-theme="benchmark"] {
+  --bg: #E7E8E0;  --bg-panel: #F2F2EC;  --bg-inset: #DBDCD2;
+  --line: #C6C8BB; --line-strong: #A3A697;
+  --text: #1E2321; --text-2: #525A54; --text-3: #7A8179;
+  --bluestone: #33505E; --oxide: #A9472A; --verdigris: #3F7259; --brass: #8A6E32;
+  --hatch: rgba(51,80,94,0.16);
+  color-scheme: light;
+}
+
+/* ---- SHADE: TILL (dark) — glacial subsoil, near-black with a green-brown cast ----
+   Three-state: OS dark unless pinned to section; pinned till always. */
+@media (prefers-color-scheme: dark) {
+  [data-theme="benchmark"]:not([data-shade="section"]) {
+    --bg: #161815;  --bg-panel: #1E211C;  --bg-inset: #262A23;
+    --line: #333830; --line-strong: #474D42;
+    --text: #E6E8E0; --text-2: #A0A79B; --text-3: #7E857A;
+    --bluestone: #6E93A4; --oxide: #D2704C; --verdigris: #6BA98A; --brass: #C4A24F;
+    --hatch: rgba(110,147,164,0.16);
+    color-scheme: dark;
+  }
+}
+[data-theme="benchmark"][data-shade="till"] {
+  --bg: #161815;  --bg-panel: #1E211C;  --bg-inset: #262A23;
+  --line: #333830; --line-strong: #474D42;
+  --text: #E6E8E0; --text-2: #A0A79B; --text-3: #7E857A;
+  --bluestone: #6E93A4; --oxide: #D2704C; --verdigris: #6BA98A; --brass: #C4A24F;
+  --hatch: rgba(110,147,164,0.16);
+  color-scheme: dark;
+}
+
+/* ============ FOUNDATION ============ */
+[data-theme="benchmark"] { background: var(--bg); color: var(--text); }
+[data-theme="benchmark"] * { box-sizing: border-box; }
+
+[data-theme="benchmark"] body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.68;
+  background: var(--bg);
+  color: var(--text);
+  transition: background .25s, color .25s;
+}
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ============ TYPE ============
+   INK TIERS — the rule: --text-3 never labels anything.
+   --text    values, content, headlines
+   --text-2  every label, key, column header, section name
+   --text-3  pure annotation only
+   Display = Bitter. Labels, tables, data = Barlow. Prose = Source Serif.
+*/
+[data-theme="benchmark"] h1,
+[data-theme="benchmark"] h2,
+[data-theme="benchmark"] h3 {
+  font-family: var(--font-display);
+  color: var(--text);
+  line-height: 1.15;
+  margin: 0 0 .5em;
+}
+[data-theme="benchmark"] h1 { font-weight: 700; font-size: clamp(36px, 6vw, 58px); }
+[data-theme="benchmark"] h2 { font-weight: 700; font-size: 26px; }
+[data-theme="benchmark"] h3 { font-weight: 600; font-size: 19px; }
+
+.eyebrow, .label, th, .data {
+  font-family: var(--font-label);
+  font-variant-numeric: tabular-nums;
+}
+.eyebrow {
+  font-weight: 600; font-size: 12.5px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--bluestone);
+}
+.label { font-weight: 500; color: var(--text-2); }
+.annotation { font-family: var(--font-label); font-size: 12px; color: var(--text-3); }
+
+/* Section rule — bluestone, structural. */
+.section-rule { border: 0; border-top: 1px solid var(--bluestone); margin: 40px 0 24px; }
+
+/* ============ PANEL + CORNER MONUMENT ============
+   Top-left L-tick (two 2px bars, 20px, bluestone) sitting on the border,
+   with a 5px oxide square inset 5px: the surveyed line and the iron pin.
+   Square corners. Never Toolpath's top-right mitered bracket. */
+.panel {
+  position: relative;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  padding: 22px 24px;
+}
+.panel::before {
+  content: ""; position: absolute; top: -1px; left: -1px;
+  width: 20px; height: 20px;
+  border-top: 2px solid var(--bluestone);
+  border-left: 2px solid var(--bluestone);
+  pointer-events: none;
+}
+.panel::after {
+  content: ""; position: absolute; top: 5px; left: 5px;
+  width: 5px; height: 5px;
+  background: var(--oxide);
+  pointer-events: none;
+}
+
+/* ============ CONTOUR HERO ============
+   The contours are drawn on a canvas by script (marching squares over a
+   sine-sum height field, 8 levels, alternating 0.46 / 0.24 alpha in
+   bluestone, read from --bluestone so it follows the shade). Redraw on
+   resize and shade change. This file only places the canvas.
+   Markup: <section class="hero"><canvas class="contour" aria-hidden="true"></canvas>…</section> */
+.hero { position: relative; overflow: hidden; padding: 72px 0 56px; }
+.hero .contour {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: .5; pointer-events: none; z-index: 0;
+}
+.hero > :not(.contour) { position: relative; z-index: 1; }
+
+/* ============ DOT-LEADER SPEC ROWS ============
+   PRIMARY BEDROOM ········ 290 */
+.leader { list-style: none; margin: 0; padding: 0; }
+.leader li {
+  display: flex; align-items: baseline; gap: 8px;
+  font-family: var(--font-label); font-variant-numeric: tabular-nums;
+  font-size: 14px; padding: 4px 0;
+}
+.leader .k { color: var(--text-2); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+.leader .dots { flex: 1; border-bottom: 1px dotted var(--line-strong); transform: translateY(-3px); }
+.leader .v { color: var(--text); white-space: nowrap; }
+.leader .core .v, .leader .struct .v { color: var(--bluestone); }
+.leader .total .k, .leader .total .v { color: var(--oxide); font-weight: 600; }
+
+/* ============ STATIONING ============
+   Only where order and interval carry information. Never decoration.
+   <li><span class="sta">STA 11+00</span> …</li> */
+.sta {
+  font-family: var(--font-label); font-variant-numeric: tabular-nums;
+  font-weight: 600; font-size: 13px; letter-spacing: .06em;
+  color: var(--bluestone); white-space: nowrap;
+}
+
+/* ============ EARTH HATCH ============
+   Below grade or at risk: foundations, septic, buried utilities,
+   unresolved risk. Two or three per document. */
+.hatch {
+  background-image: repeating-linear-gradient(45deg,
+    var(--hatch) 0 1px, transparent 1px 7px);
+}
+
+/* ============ CALLOUTS ============
+   3px left rule. Never centered, never a rounded card. */
+.callout {
+  border-left: 3px solid var(--line-strong);
+  background: var(--bg-panel);
+  padding: 14px 18px;
+  border-radius: 0;
+}
+.callout.risk { border-left-color: var(--oxide); }
+.callout.rec  { border-left-color: var(--verdigris); }
+
+/* ============ STATUS PILLS ============
+   Always color plus text: SPEND FIRST, SKIP, GATE 3 FIRST. */
+.status {
+  display: inline-block;
+  font-family: var(--font-label); font-weight: 600; font-size: 11.5px;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 2px 8px; border: 1px solid currentColor; border-radius: 0;
+  color: var(--bluestone);
+}
+.status.risk { color: var(--oxide); }
+.status.ok   { color: var(--verdigris); }
+
+/* ============ TABLE ============ */
+.table { width: 100%; border-collapse: collapse; font-family: var(--font-label); font-variant-numeric: tabular-nums; font-size: 14px; }
+.table th { text-align: left; font-weight: 600; color: var(--text-2); letter-spacing: .08em; text-transform: uppercase; font-size: 12px; border-bottom: 1px solid var(--line-strong); padding: 8px 10px; }
+.table td { border-bottom: 1px solid var(--line); padding: 8px 10px; color: var(--text); }
+.table td.num { text-align: right; }
+
+/* ============ THE SIGNATURE — BENCHMARK DISK ============
+   Every Benchmark artifact ends with one. Brass appears here and on the
+   rev mark only. */
+.signature { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 56px; }
+.disk {
+  position: relative; flex: none;
+  width: 104px; height: 104px; border-radius: 50%;
+  border: 2px solid var(--brass);
+  background: var(--bg-inset);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 2px;
+}
+.disk::before {
+  content: ""; position: absolute; inset: 7px; border-radius: 50%;
+  border: 2px solid var(--brass); opacity: .5; pointer-events: none;
+}
+.disk .d-label { font-family: var(--font-label); font-weight: 600; font-size: 8.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-2); }
+.disk .d-name  { font-family: var(--font-display); font-weight: 700; font-size: 13px; line-height: 1.1; color: var(--text); max-width: 76px; }
+.disk .d-loc   { font-family: var(--font-label); font-size: 8.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); }
+
+/* Four-cell strip: PROJECT · REV · DATE · DRAWN */
+.meta {
+  display: grid; grid-template-columns: repeat(4, auto);
+  border: 1px solid var(--line-strong);
+  font-family: var(--font-label); font-variant-numeric: tabular-nums;
+}
+.meta > div { padding: 8px 14px; border-left: 1px solid var(--line); }
+.meta > div:first-child { border-left: 0; }
+.meta .k { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); }
+.meta .v { display: block; font-size: 14px; color: var(--text); }
+.meta .rev .v { color: var(--brass); font-weight: 600; }
+
+@media (max-width: 560px) {
+  .meta { grid-template-columns: repeat(2, auto); }
+  .meta > div:nth-child(3) { border-left: 0; }
+}
+
+/* ============ ACCESSIBILITY ============ */
+[data-theme="benchmark"] :focus-visible { outline: 2px solid var(--oxide); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="benchmark"] *,
+  [data-theme="benchmark"] body { transition: none !important; animation: none !important; }
+}

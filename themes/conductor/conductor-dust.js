@@ -16,7 +16,7 @@
    Nothing falls in columns; this is not the Matrix.
    Reads --sodium and --text so it follows the shade.
    Honors prefers-reduced-motion: one still frame with a figure held.
-   Spec: references/conductor.md
+   Spec: conductor.md
    ============================================================ */
 (function (root) {
   var reduce = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
