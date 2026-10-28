@@ -1,13 +1,15 @@
 # livery
 
-Jeff's themes and the platform customizations that install them. The
-artifact side (CSS tokens, specimen pages, the theming skill) stays in
-`warriorcatlodge/skills`; this repo holds everything that lands on a machine.
+Jeff's themes: the artifact side (CSS tokens, references, the ask-first
+protocol) and the platform customizations that install them on a machine.
+`themes/README.md` is the registry and the entry point; the `artifact-themes`
+skill in `warriorcatlodge/skills` only points here.
 
-| Theme | Mac (nix) | Windows | Omarchy | Wallpapers |
-|---|---|---|---|---|
-| Conductor | `homeManagerModules.conductor`, `darwinModules.conductor` | | | PNG, Dynamic Desktop HEIC, live board |
-| Toolpath | `darwinModules.toolpath`, `themes/toolpath/macos` (scripts) | `themes/toolpath/windows` | `themes/toolpath/omarchy` | PNG, Dynamic Desktop HEIC |
+| Theme | Artifacts | Mac (nix) | Windows | Omarchy | Wallpapers |
+|---|---|---|---|---|---|
+| Conductor | `themes/conductor/conductor.css`, `conductor-dust.js` | `homeManagerModules.conductor`, `darwinModules.conductor` | | | PNG, Dynamic Desktop HEIC, live board |
+| Toolpath | `themes/toolpath/toolpath.css` | `darwinModules.toolpath`, `themes/toolpath/macos` (scripts) | `themes/toolpath/windows` | `themes/toolpath/omarchy` | PNG, Dynamic Desktop HEIC |
+| Benchmark | `themes/benchmark/benchmark.css` | | | | |
 
 ## Mac, with nix-darwin and home-manager
 
