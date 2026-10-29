@@ -53,7 +53,8 @@ into whatever the surface supports; derive only what's missing.
 
 - **Print as a first-class surface** (learned on Bricky): set sizes in pt and
   mm, not px, so screen and paper measure alike; make the on-screen page the
-  same box as the printed one; force the light shade under `@media print`;
+  same box as the printed one, and if paper is the point, ship one light shade so
+  the screen never shows a different document;
   keep the document complete in black and white and add colour on top, with a
   distinct shape per colour role so a mono copy or a colour-blind reader loses
   nothing. Check with a real PDF render, not the screen.

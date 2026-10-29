@@ -14,7 +14,7 @@ from it; nothing about the themes lives there.
 | **Toolpath** | Shop Floor (dark) · Vellum (light) | Shop Floor | Personal projects: woodworking, 3D printing, home automation, classical guitar, technical study |
 | **Benchmark** | Section (light) · Till (dark) | Section | Land, property and construction: the Granville estate, renovation scopes, budgets, site and systems work, anything about a place rather than a workpiece |
 | **Conductor** | Moffat (dark) · Stainless (light) | Moffat | The `conductor` Mac Mini and everything it runs: orchestration, builds, CI, runners, dashboards and status pages for the machine, its terminal |
-| **Bricky** | Baseplate (light) · Tray (dark) | Baseplate | Music education and music theory first: score sheets, worksheets, anything meant to be printed and learned from. Print is a first-class medium |
+| **Bricky** | Paper (light, the only shade) | Paper | Music education and music theory first: score sheets, worksheets, anything meant to be printed and learned from. Print is a first-class medium |
 
 "Usual" is the shade meant when Jeff says "usual" or names only the theme:
 Toolpath is looked at for long stretches, property work is read on paper, the
