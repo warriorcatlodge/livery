@@ -101,7 +101,13 @@ https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Atkinso
 ```
 
 Sizes are set in points because the page is the primary medium: 26 pt title,
-13 pt section, 11 pt body, 8 pt uppercase labels. Nothing printed below 6 pt.
+13 pt section, 11 pt body, 8.5 pt bold labels. Nothing printed below 6 pt.
+
+**Capitalization follows Apple's Human Interface Guidelines.** Title case for
+titles, headings, labels, buttons, tabs and key entries (articles, short
+prepositions and coordinating conjunctions stay lowercase unless first or last);
+sentence case for anything written as a sentence. No all-caps labels and no
+wide letter-spacing: weight and size carry the hierarchy.
 
 ## Conventions
 
@@ -130,7 +136,7 @@ cells.
 
 | pieces | TITLE | REV | DATE | BUILT |
 |---|---|---|---|---|
-| a red square, yellow square, blue circle, green square | artifact name, uppercase | letter, in red | ISO `YYYY-MM-DD` | `JDC` |
+| a red square, yellow square, blue circle, green square | artifact name, title case | letter, in red | ISO `YYYY-MM-DD` | `JDC` |
 
 The four pieces are the colour key in miniature, so the tag also explains the
 page. It prints. Bump the rev letter on meaningful revisions.
