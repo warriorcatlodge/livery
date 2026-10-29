@@ -1,0 +1,160 @@
+/* ============================================================
+   BRICKY — Rev A
+   Personal design system · JDC · print is a first-class medium
+   Usage: <html data-theme="bricky" data-shade="baseplate">
+          shades: "baseplate" (light, usual, print) | "tray" (dark, screen only)
+   Fonts: Fredoka (500,600,700) + Atkinson Hyperlegible (400,700)
+   Print always renders Baseplate, whatever the screen shade.
+   ============================================================ */
+
+:root {
+  --font-display: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --font-body: 'Atkinson Hyperlegible', 'Verdana', sans-serif;
+
+  /* The module. A toy brick's stud pitch is 8 mm, a plate is 3.2 mm, a brick is
+     three plates. Every margin, gutter and rhythm is a whole number of these. */
+  --stud: 8mm;
+  --plate: 3.2mm;
+  --brick: 9.6mm;
+  --stud-d: 4.8mm;          /* stud diameter */
+  --edge: 0.6mm;            /* corner radius: a moulded edge, not a pill */
+  --rule: 0.35mm;           /* line weight that survives a laser printer */
+}
+
+/* ---- SHADE: BASEPLATE (light, print) ---- */
+[data-theme="bricky"][data-shade="baseplate"] {
+  --bg:#FFFFFF; --bg-panel:#F6F6F3; --bg-inset:#ECECE7;
+  --line:#D6D6D0; --line-strong:#9C9C94;
+  --text:#111111; --text-2:#4A4F57; --text-3:#6D737C;
+  --red:#C42B25; --yellow:#F5C400; --blue:#0057A8; --green:#007A3D;
+  --on-fill:#FFFFFF; --on-yellow:#111111;
+}
+
+/* ---- SHADE: TRAY (dark, screen) ---- */
+[data-theme="bricky"][data-shade="tray"] {
+  --bg:#1A1C20; --bg-panel:#22252A; --bg-inset:#2B2F35;
+  --line:#383C43; --line-strong:#555A62;
+  --text:#E9EAEC; --text-2:#A4A9B1; --text-3:#868C95;
+  --red:#FF6B5E; --yellow:#F5C400; --blue:#5AA9FF; --green:#3DCB7F;
+  --on-fill:#1A1C20; --on-yellow:#1A1C20;
+}
+
+/* Print is Baseplate, always: paper is white and toner is black. */
+@media print {
+  [data-theme="bricky"] {
+    --bg:#FFFFFF; --bg-panel:#FFFFFF; --bg-inset:#F2F2EE;
+    --line:#CFCFC8; --line-strong:#8A8A82;
+    --text:#000000; --text-2:#3E434A; --text-3:#62686F;
+    --red:#C42B25; --yellow:#F5C400; --blue:#0057A8; --green:#007A3D;
+    --on-fill:#FFFFFF; --on-yellow:#000000;
+  }
+  [data-theme="bricky"] * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print { display: none !important; }
+}
+
+/* ============ FOUNDATION ============ */
+[data-theme="bricky"] *, [data-theme="bricky"] *::before, [data-theme="bricky"] *::after { box-sizing: border-box; }
+[data-theme="bricky"] body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 11pt; line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============ TYPE ============
+   Two faces. Fredoka (round, chunky) for titles and the few big numerals;
+   Atkinson Hyperlegible for everything read, because it was drawn so that
+   1/l/I and 0/O never get confused — which matters to a learner.
+   Ink tiers: --text content · --text-2 every label · --text-3 annotation only. */
+[data-theme="bricky"] h1, [data-theme="bricky"] .display {
+  font-family: var(--font-display); font-weight: 600; letter-spacing: -.005em;
+  font-size: 26pt; line-height: 1.05; margin: 0;
+}
+[data-theme="bricky"] h2 {
+  font-family: var(--font-display); font-weight: 600; font-size: 13pt; margin: 0 0 var(--plate);
+}
+[data-theme="bricky"] .label {
+  font-size: 8pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-2);
+}
+[data-theme="bricky"] .sub { color: var(--text-2); font-size: 10pt; }
+
+/* ============ STUD ROW ============
+   A row of studs at 8 mm pitch. Decoration for a plate's top edge only;
+   one stud row per surface, never a field of them. */
+.studs {
+  height: calc(var(--stud-d) * .55);
+  background: radial-gradient(circle at 50% 100%, currentColor 0 calc(var(--stud-d) / 2), transparent calc(var(--stud-d) / 2 + .1mm))
+              0 0 / var(--stud) 100% repeat-x;
+}
+
+/* ============ PLATE (panel) ============
+   Flat face, hairline edge, small moulded radius. No shadows, no gradients:
+   a brick is one colour all the way through. */
+.plate {
+  background: var(--bg-panel); border: var(--rule) solid var(--line-strong);
+  border-radius: var(--edge); padding: var(--plate) calc(var(--plate) * 1.5);
+}
+
+/* ============ PIECES — the four colour roles ============
+   Each role has its own SHAPE as well as its colour, so a greyscale copy or a
+   colour-blind reader still tells them apart.
+   red    · brick  (rectangle with two studs) · where you are: position, step, emphasis
+   blue   · round  (circle)                   · structure: which string, which line, which part
+   green  · text   (bold green letters)       · the answer: note names, correct, go
+   yellow · tile   (square, dark letter)      · what the hand does: fingering, highlight fill
+   Yellow is never text on white; it is always a fill with dark ink on it. */
+.brick {
+  display: inline-block; position: relative; margin-top: 1mm;
+  background: var(--red); color: var(--on-fill); border-radius: var(--edge);
+  font-family: var(--font-display); font-weight: 600; line-height: 1; padding: .8mm 1.6mm .6mm;
+}
+.brick::before {
+  content: ''; position: absolute; left: 18%; right: 18%; top: -1mm; height: 1mm;
+  background: radial-gradient(circle at 50% 100%, var(--red) 0 .9mm, transparent .95mm) 0 0 / 50% 100% repeat-x;
+}
+.round {
+  display: inline-grid; place-items: center; width: 1.25em; height: 1.25em; border-radius: 50%;
+  background: var(--blue); color: var(--on-fill); font-weight: 700; font-size: .85em; line-height: 1;
+}
+.answer { color: var(--green); font-weight: 700; }
+.tile {
+  display: inline-grid; place-items: center; min-width: 1.25em; height: 1.25em; padding: 0 .15em;
+  border-radius: var(--edge); background: var(--yellow); color: var(--on-yellow); font-weight: 700; font-size: .85em; line-height: 1;
+}
+
+/* ============ KEY ============ */
+.key { display: flex; flex-wrap: wrap; gap: 1.5mm var(--stud); align-items: center; font-size: 9pt; color: var(--text-2); }
+.key > span { display: inline-flex; gap: 1.4mm; align-items: center; }
+
+/* ============ BUILD TAG — the signature ============
+   Every Bricky artifact ends with it: four 1×1 pieces in the role colours,
+   then the record. The pieces are the colour key, so the tag also explains
+   the page. Stud row on the top edge of the left block only. */
+.buildtag {
+  display: grid; grid-template-columns: auto 3fr 1fr 1fr 1fr;
+  border: var(--rule) solid var(--text); border-radius: var(--edge); font-size: 8.5pt;
+}
+.buildtag > div { padding: 1.2mm 2.4mm; border-left: var(--rule) solid var(--line-strong); }
+.buildtag > div:first-child { border-left: none; display: flex; gap: 1mm; align-items: center; }
+.buildtag .pc { width: 3.2mm; height: 3.2mm; border-radius: .3mm; }
+.buildtag .pc.r { background: var(--red); } .buildtag .pc.y { background: var(--yellow); }
+.buildtag .pc.b { background: var(--blue); border-radius: 50%; } .buildtag .pc.g { background: var(--green); }
+.buildtag .k { display: block; font-size: 6.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); }
+.buildtag .v { color: var(--text); font-weight: 700; }
+.buildtag .v.rev { color: var(--red); }
+
+/* ============ PAGE ============
+   US Letter at 0.5 in margins. On screen a .sheet is the paper itself. */
+@page { size: letter; margin: 12.7mm; }
+.sheet {
+  width: 215.9mm; min-height: 279.4mm; padding: 12.7mm; margin: var(--stud) auto;
+  background: var(--bg); display: flex; flex-direction: column; gap: var(--plate);
+}
+[data-shade="baseplate"] .sheet { box-shadow: 0 0 0 var(--rule) var(--line); }
+@media print {
+  .sheet { width: auto; min-height: 0; height: 253.9mm; padding: 0; margin: 0; box-shadow: none; break-after: page; overflow: hidden; }
+  .sheet:last-child { break-after: auto; }
+}
+@media screen and (max-width: 230mm) {
+  .sheet { width: 100%; min-height: 0; margin: 0 0 var(--stud); padding: 4mm; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
