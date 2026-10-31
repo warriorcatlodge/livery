@@ -45,14 +45,17 @@ is always a fill with dark ink on it.
 
 ## The four colour roles — do not improvise
 
-Each primary colour has one job and one shape. Shape carries the meaning when
+Each primary colour has one job and one shape. Red and green are both bare
+text; what they say tells them apart (a Roman numeral against a letter and
+octave). Set Roman numerals in Atkinson Hyperlegible, whose serifed I can't be
+mistaken for a barline or a 1. Shape carries the meaning when
 colour can't: on a greyscale copy, for a colour-blind reader, on a faded print.
 
 | Colour | Shape | Role | In music |
 |---|---|---|---|
-| **Red** | badge (rectangle, white text) | where you are: position, step, the one thing to look at | left-hand position (Roman numeral) |
+| **Red** | Roman numeral, bold, no container | where you are: position, step, the one thing to look at | left-hand position (Roman numeral) |
 | **Blue** | dot (circle, white text) | structure: which line, which string, which part | string number |
-| **Green** | bold green word, no container | the answer: names, correct, go | note name, at sounding pitch |
+| **Green** | bold note name, no container | the answer: names, correct, go | note name, at sounding pitch |
 | **Yellow** | square (dark letter) | what the hand does; highlight fill | right-hand finger p i m a |
 
 Main notation stays black. Colour is added on top of a complete black-and-white
@@ -82,8 +85,7 @@ prints.
 
 Two faces. Never IBM Plex (day job).
 
-- **Fredoka** (500/600/700): titles and the few big numerals, including the
-  Roman numerals in a red badge.
+- **Fredoka** (500/600/700): titles only.
 - **Atkinson Hyperlegible** (400/700): everything that is read. Drawn by the
   Braille Institute so that 1/l/I, 0/O and similar pairs never get confused,
   which matters more to a learner than to anyone else. Tabular figures on.
@@ -112,7 +114,7 @@ colour is doing the ink's job.
 **Shape before colour.** A new role needs a shape no other role uses. Four roles
 is the palette; a fifth needs a reason.
 
-**Status is shape plus text.** A red badge says *here*, a green word says *yes*;
+**Status is shape plus text.** A red numeral says *here*, a green word says *yes*;
 never colour alone.
 
 **Colour bar.** The four primaries side by side, once, under the page title.
@@ -134,11 +136,11 @@ Worked example: the one-page score sheets in the Solera project (Romanza,
 Celeste y Blanco), drawn with VexFlow.
 
 - Staff, notes, rests, barlines and LH finger numbers in ink.
-- A red position badge sits above each bar, left-aligned to its first note; the
+- The position, a red Roman numeral with no box, sits above each bar, left-aligned to its first note; the
   bar number in label ink to its left.
-- When the hand moves position inside a bar, a second badge marks the new
+- When the hand moves position inside a bar, a second numeral marks the new
   position over the first note (or beat) that needs it, on the same line as the
-  bar's own badge.
+  bar's own numeral.
 - Each note's annotation chip is `green name · blue dot · yellow square`,
   centred on the string dot. Upper voice above the staff, bass and inner voices
   below, aligned across the row.
