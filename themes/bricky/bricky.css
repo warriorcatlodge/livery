@@ -79,14 +79,14 @@
    Each role has its own shape as well as its colour, so a greyscale copy or a
    colour-blind reader still tells them apart.
    red    · Roman numeral (no container)     · where you are: position, step, emphasis
-   blue   · dot    (circle, white text)    · structure: which string, which line, which part
+   blue   · ring   (outlined circle, blue number) · structure: which string, which line, which part
    green  · word   (bold body letters)     · the answer: note names, correct, go
    yellow · square (square, dark letter)   · what the hand does: fingering, highlight fill
    Yellow is never text on white; it is always a fill with dark ink on it. */
 .position { color: var(--red); font-weight: 700; line-height: 1; }
-.dot {
+.ring {
   display: inline-grid; place-items: center; width: 1.25em; height: 1.25em; border-radius: 50%;
-  background: var(--blue); color: var(--on-fill); font-weight: 700; font-size: .85em; line-height: 1;
+  border: .3mm solid var(--blue); color: var(--blue); font-weight: 700; font-size: .85em; line-height: 1;
 }
 .word { color: var(--green); font-weight: 700; }
 .square {

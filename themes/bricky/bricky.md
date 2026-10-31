@@ -39,7 +39,7 @@ give a different document from the paper one, and the paper one is the point.
 | on fill | `#FFFFFF` |
 | on yellow | `#111111` |
 
-Measured contrast: white on Red 5.65:1, white on Blue 7.2:1, Green on white
+Measured contrast: white on Red 5.65:1, Blue on white 7.2:1, Green on white
 5.45:1, black on Yellow 11.5:1. Yellow is never text on white: it fails, so it
 is always a fill with dark ink on it.
 
@@ -54,7 +54,7 @@ colour can't: on a greyscale copy, for a colour-blind reader, on a faded print.
 | Colour | Shape | Role | In music |
 |---|---|---|---|
 | **Red** | Roman numeral, bold, no container | where you are: position, step, the one thing to look at | left-hand position (Roman numeral) |
-| **Blue** | dot (circle, white text) | structure: which line, which string, which part | string number |
+| **Blue** | ring (outlined circle, number centred in blue), the engraving convention for string numbers | structure: which line, which string, which part | string number |
 | **Green** | bold note name, no container | the answer: names, correct, go | note name, at sounding pitch |
 | **Yellow** | square (dark letter) | what the hand does; highlight fill | right-hand finger p i m a |
 
@@ -141,10 +141,10 @@ Celeste y Blanco), drawn with VexFlow.
 - When the hand moves position inside a bar, a second numeral marks the new
   position over the first note (or beat) that needs it, on the same line as the
   bar's own numeral.
-- Each note's annotation chip is `green name · blue dot · yellow square`,
-  centred on the string dot. Upper voice above the staff, bass and inner voices
+- Each note's annotation chip is `green name · blue ring · yellow square`,
+  centred on the string ring. Upper voice above the staff, bass and inner voices
   below, aligned across the row.
-- When chips would touch, a single-note chip stands up (name over dot over
+- When chips would touch, a single-note chip stands up (name over ring over
   square) instead of shrinking.
 - A sheet always fits one page: rows are measured after drawing, stacked tight,
   and the whole score scales to the space left. At least four bars per line.
