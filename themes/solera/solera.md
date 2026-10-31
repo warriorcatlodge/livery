@@ -1,4 +1,4 @@
-# Solera — Rev A
+# Solera — Rev B
 
 Derived from the classical guitar on the bench and the score on the stand.
 Toolpath is the shop; Solera is the instrument that comes out of it and the
@@ -50,11 +50,13 @@ Three-tier ink rule as in the other themes: the faintest tier never labels anyth
 
 ## Type
 
-All faces ship with macOS, so the theme needs no font install.
+All faces ship with macOS, so the theme needs no font install. Rev A used
+Didot and Iowan Old Style; Jeff found them too traditional, so the period
+feel comes from the woods and the notation marks, not the type.
 
-- **Didot** — H1 and H2. Engraved-score title type.
-- **Iowan Old Style** — body and H3–H6. H4–H6 in small caps.
-- **System UI** — interface chrome.
+- **Avenir Next** (500/600) — headings. Geometric, clean. H4–H6 and table
+  headers as tracked caps, like tempo and expression marks.
+- **System UI** (SF Pro) — body and interface chrome.
 - **SF Mono** — code.
 
 Never IBM Plex (day job), Inter, or Space Grotesk.
@@ -63,9 +65,9 @@ Never IBM Plex (day job), Inter, or Space Grotesk.
 
 - **Staff under every H1**: five hairlines, 4px apart, in line strong.
 - **Fret for `---`**: a 2px wire with the 12th-fret double pearl dot.
-- **Final barline on blockquotes**: thin + thick bar, italic text.
+- **Final barline on blockquotes**: thin + thick bar.
 - **Callouts**: square, 3px barline on the left, faint wash. No rounded cards.
-- **Tables**: small-caps header over a 2px rule, no vertical lines.
+- **Tables**: tracked-caps header over a 2px rule, no vertical lines.
 - **Active tab**: a 2px rosewood binding strip on top.
 
 ## Obsidian

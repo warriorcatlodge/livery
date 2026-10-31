@@ -1,5 +1,5 @@
 /* ============================================================
-   SOLERA — Rev A · Obsidian theme · JDC
+   SOLERA — Rev B · Obsidian theme · JDC
    Classical guitar and lutherie. Woods of the instrument, marks of the score.
    Shades: Soundboard (light, cedar top under French polish)
            Fretboard (dark, ebony)
@@ -8,20 +8,20 @@
    ============================================================ */
 
 body {
-  --font-text-theme: 'Iowan Old Style', 'Palatino', Georgia, serif;
+  --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-monospace-theme: 'SF Mono', ui-monospace, Menlo, monospace;
-  --solera-display: 'Didot', 'Bodoni 72', 'Iowan Old Style', Georgia, serif;
+  --solera-display: 'Avenir Next', 'Avenir', -apple-system, sans-serif;
 
   --h1-font: var(--solera-display);
   --h2-font: var(--solera-display);
-  --h3-font: var(--font-text);
-  --h1-weight: 400; --h2-weight: 400; --h3-weight: 600;
+  --h3-font: var(--solera-display);
+  --h4-font: var(--solera-display); --h5-font: var(--solera-display); --h6-font: var(--solera-display);
+  --h1-weight: 500; --h2-weight: 500; --h3-weight: 600;
   --h4-weight: 600; --h5-weight: 600; --h6-weight: 600;
-  --h1-size: 2.1em; --h2-size: 1.6em; --h3-size: 1.25em;
+  --h1-size: 2em; --h2-size: 1.5em; --h3-size: 1.25em;
   --h4-size: 1.05em; --h5-size: 0.95em; --h6-size: 0.9em;
-  --h4-variant: small-caps; --h5-variant: small-caps; --h6-variant: small-caps;
-  --line-height-normal: 1.65;
+  --line-height-normal: 1.6;
   --radius-s: 2px; --radius-m: 3px; --radius-l: 4px; --radius-xl: 6px;
   --callout-radius: 0;
   --checkbox-radius: 50%;
@@ -186,7 +186,7 @@ body {
   background-size: 100% 17px;
   background-position: left bottom;
   background-repeat: no-repeat;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
 }
 
 /* H2: a single ledger line. */
@@ -226,7 +226,6 @@ body {
   background-size: 1px 100%, 4px 100%;
   background-position: 0 0, 4px 0;
   background-repeat: no-repeat;
-  font-style: italic;
 }
 .markdown-source-view.mod-cm6 .HyperMD-quote::before { border-left-width: 3px; }
 
@@ -247,18 +246,28 @@ body {
   background: var(--solera-pearl);
 }
 
-/* Tables: header row in small caps, ruled like a tab staff. */
+/* Tables: header row as tracked caps, ruled like a tab staff. */
 .markdown-rendered table { border-collapse: collapse; }
 .markdown-rendered th {
-  font-variant: small-caps;
-  letter-spacing: 0.04em;
+  font-family: var(--solera-display);
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--solera-ink-2);
   border-bottom: 2px solid var(--solera-line-strong);
 }
 .markdown-rendered td, .markdown-rendered th { border-left: none; border-right: none; }
 
-/* Properties: labels in small caps, the ink-2 tier. */
-.metadata-property-key { font-variant: small-caps; color: var(--solera-ink-2); }
+/* Properties: labels in the ink-2 tier. */
+.metadata-property-key { color: var(--solera-ink-2); }
 
 /* Selected tab gets a rosewood top edge, like a binding strip. */
 .workspace-tab-header.is-active { box-shadow: inset 0 2px 0 var(--solera-rosewood); }
+
+/* H4-H6: tracked caps, like tempo and expression marks. */
+.markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6,
+.HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6 {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
