@@ -51,6 +51,14 @@ into whatever the surface supports; derive only what's missing.
 
 ## Techniques that transfer
 
+- **Print as a first-class surface** (learned on Bricky): set sizes in pt and
+  mm, not px, so screen and paper measure alike; make the on-screen page the
+  same box as the printed one, and if paper is the point, ship one light shade so
+  the screen never shows a different document;
+  keep the document complete in black and white and add colour on top, with a
+  distinct shape per colour role so a mono copy or a colour-blind reader loses
+  nothing. Check with a real PDF render, not the screen.
+
 - **Sentinel-color keying** (shaders/overlays): render an element in a color
   the palette never uses; post-process replaces it. Key on channel
   RELATIONSHIPS, never exact hexes — colorspace conversion (sRGB vs P3)
