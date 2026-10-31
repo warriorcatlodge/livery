@@ -130,24 +130,51 @@ Every Bricky page ends with a tag: a ruled strip, black edge, five cells.
 The four colours are the key in miniature, so the tag also explains the page.
 It prints. Bump the rev letter on meaningful revisions.
 
-## Music engraving notes
+## Score annotation layout
 
-Worked example: the one-page score sheets in the Solera project (Romanza,
-Celeste y Blanco), drawn with VexFlow.
+These rules are for guitar scores (worked example: the one-page score sheets in
+the Solera project, Romanza and Celeste y Blanco, drawn with VexFlow). Keep each
+mark where a player's eye already is: technique next to the note, names in a band.
 
-- Staff, notes, rests, barlines and LH finger numbers in ink.
-- The position, a red Roman numeral with no box, sits above each bar, left-aligned to its first note; the
-  bar number in label ink to its left.
-- When the hand moves position inside a bar, a second numeral marks the new
-  position over the first note (or beat) that needs it, on the same line as the
-  bar's own numeral.
-- Each note's annotation chip is `green name · blue ring · yellow square`,
-  centred on the string ring. Upper voice above the staff, bass and inner voices
-  below, aligned across the row.
-- When chips would touch, a single-note chip stands up (name over ring over
-  square) instead of shrinking.
-- A sheet always fits one page: rows are measured after drawing, stacked tight,
-  and the whole score scales to the space left. At least four bars per line.
+**On the staff, in ink**
+- Staff, notes, rests, barlines, ties and left-hand finger numbers (1–4, left of
+  the notehead) are black. They are the music; nothing coloured replaces them.
+- Measure number: a small Arabic numeral (8 units, label ink) at the top-left
+  corner of every measure, just above the top line. Pickups and split bars that
+  continue a measure carry no number.
+
+**Next to each notehead, left to right after any dot**
+- String: a blue ring (outlined circle, number centred in blue), the standard
+  engraving mark for a string. Never a filled circle.
+- Right hand: a yellow square with p, i, m or a, directly after the ring. A tied
+  or slurred note shows `tie` or `sl` in label ink instead of a square.
+- The formatter reserves this room (VexFlow `StringNumber` slot on the right),
+  so notes space themselves around it instead of colliding. In a chord each
+  note gets its own ring and square at its own height.
+
+**Above the measure**
+- Position: a bare red Roman numeral (bold body face, no box), left-aligned to the
+  measure's first note, on one line across the row. `0` means open position.
+- A move to a new position inside the measure gets its own red numeral on the
+  same line, over the first note or beat that needs the new position. The
+  measure's own numeral shows only where the hand starts.
+- Section labels (Fine, Tiempo de Gato, 1., 2. D.C.) sit to the right of the
+  measure's position numeral in bold label ink.
+
+**Note-name bands**
+- Note names in green at concert octave (open G = G3, low E = E2), with no
+  explanation on the page: the octave convention is standard.
+- Upper voice: names in a band above the staff. Bass and inner voices: a band
+  below. Each name is centred on its notehead; chords stack names, highest
+  on top. Bands are aligned across the whole row, so names line up.
+
+**Scale and fit**
+- Marks on the staff are small (ring 8.8 units wide, square 8.6) so every note
+  is annotated the same way, with no switch to a different layout in dense bars.
+- Each measure gets VexFlow's minimum width plus 20% and a margin; each row
+  shares the rest. At least four measures per line.
+- A sheet always fits one US Letter page: rows are measured after drawing,
+  stacked tight, and the whole score scales to the space left.
 
 ## Accessibility notes already handled
 
