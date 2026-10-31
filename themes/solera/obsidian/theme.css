@@ -260,17 +260,9 @@ body {
 .markdown-rendered td, .markdown-rendered th { border-left: none; border-right: none; }
 
 /* Properties: labels in the ink-2 tier. */
-.metadata-property-key { color: var(--solera-ink-2); }
 
 /* Selected tab gets a rosewood top edge, like a binding strip. */
 .workspace-tab-header.is-active { box-shadow: inset 0 2px 0 var(--solera-rosewood); }
-
-/* H4-H6: tracked caps, like tempo and expression marks. */
-.markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6,
-.HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6 {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
 
 /* Note width: 80% of the pane when Readable line length is on.
    Set once on the outer sizer; the variable is reset to 100% inside it so
@@ -282,3 +274,47 @@ body {
   max-width: 80%;
   margin-inline: auto;
 }
+
+/* ============ CASING ============
+   Same casing as Toolpath: display headings uppercase, label headings and
+   chrome uppercase and tracked. Toolpath's shapes (chamfers) are not carried. */
+.markdown-rendered h1, .markdown-rendered h2,
+.HyperMD-header-1 .cm-header, .HyperMD-header-2 .cm-header,
+.inline-title {
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+.markdown-rendered h2, .HyperMD-header-2 .cm-header { letter-spacing: .18em; }
+
+.markdown-rendered h3, .markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6,
+.HyperMD-header-3 .cm-header, .HyperMD-header-4 .cm-header,
+.HyperMD-header-5 .cm-header, .HyperMD-header-6 .cm-header {
+  text-transform: uppercase;
+  letter-spacing: .16em;
+}
+
+.nav-folder-title, .tree-item-self.is-clickable .tree-item-inner,
+.view-header-title, .setting-item-name, .modal-title { letter-spacing: .02em; }
+.nav-folder-title-content {
+  text-transform: uppercase; letter-spacing: .12em; font-size: 0.78em;
+  color: var(--solera-ink-2); font-weight: 600;
+}
+.workspace-tab-header-inner-title { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+.view-header-title { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+
+.callout .callout-title { text-transform: uppercase; letter-spacing: .14em; font-weight: 600; }
+button:not(.clickable-icon) { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+.tag, .cm-hashtag { text-transform: uppercase; letter-spacing: .08em; }
+
+.metadata-property-key { text-transform: uppercase; letter-spacing: .12em; color: var(--solera-ink-2); }
+.metadata-properties-heading .metadata-properties-title {
+  text-transform: uppercase; letter-spacing: .16em; font-size: 0.78em; color: var(--solera-ink-2);
+}
+.table-cell-wrapper.is-header, .cm-table-widget th { text-transform: uppercase; letter-spacing: .14em; }
+.status-bar { letter-spacing: .12em; text-transform: uppercase; }
+.vertical-tab-header-group-title {
+  text-transform: uppercase; letter-spacing: .14em; font-size: 0.78em; color: var(--solera-ink-2);
+}
+.markdown-embed-title { text-transform: uppercase; letter-spacing: .12em; font-size: 0.8em; color: var(--solera-ink-2); }
+.empty-state-title { text-transform: uppercase; letter-spacing: .04em; }
+.empty-state-action { text-transform: uppercase; letter-spacing: .1em; font-size: 12px; }

@@ -54,8 +54,10 @@ All faces ship with macOS, so the theme needs no font install. Rev A used
 Didot and Iowan Old Style; Jeff found them too traditional, so the period
 feel comes from the woods and the notation marks, not the type.
 
-- **Avenir Next** (500/600) — headings. Geometric, clean. H4–H6 and table
-  headers as tracked caps, like tempo and expression marks.
+- **Avenir Next** (500/600) — headings. Geometric, clean.
+- **Casing** follows Toolpath: H1/H2 uppercase (H2 tracked wide), H3–H6,
+  table headers, property keys, folders, tabs, callout titles, tags and the
+  status bar uppercase and tracked. Body text keeps sentence case.
 - **System UI** (SF Pro) — body and interface chrome.
 - **SF Mono** — code.
 
