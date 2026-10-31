@@ -24,7 +24,6 @@ body {
   --line-height-normal: 1.6;
   --radius-s: 2px; --radius-m: 3px; --radius-l: 4px; --radius-xl: 6px;
   --callout-radius: 0;
-  --file-line-width: 80%;
   --checkbox-radius: 50%;
 }
 
@@ -271,4 +270,15 @@ body {
 .HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+/* Note width: 80% of the pane when Readable line length is on.
+   Set once on the outer sizer; the variable is reset to 100% inside it so
+   the nested containers that also read it don't compound (80% of 80%). */
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer,
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  --file-line-width: 100%;
+  width: 100%;
+  max-width: 80%;
+  margin-inline: auto;
 }
