@@ -171,7 +171,8 @@ mark where a player's eye already is: technique next to the note, names in a ban
 - Upper voice: names in a band above the staff, centred on each notehead.
 - Bass and inner voices: one line below, set halfway down the longest stem in
   the row (and clear of every notehead). A name whose own stem crosses that line
-  sits just right of the stem. Chords stack names, highest on top.
+  sits just right of the stem. In a chord the lowest name sits on the line and
+  the higher names stack above it.
 
 **Scale and fit**
 - Marks on the staff are small (ring 8.8 units wide, square 8.6) so every note
