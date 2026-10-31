@@ -175,7 +175,7 @@ mark where a player's eye already is: technique next to the note, names in a ban
   the higher names stack above it.
 
 **Scale and fit**
-- Marks on the staff are small (ring 8.8 units wide, square 8.6) so every note
+- Marks on the staff are small (ring 9.2 units wide, square 9.0) so every note
   is annotated the same way, with no switch to a different layout in dense bars.
 - Each measure needs VexFlow's minimum width plus 20% and a margin. Measures in
   a row are then made as even as their content allows: spare room fills the
