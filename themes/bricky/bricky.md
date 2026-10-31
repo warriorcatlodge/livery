@@ -180,8 +180,11 @@ mark where a player's eye already is: technique next to the note, names in a ban
 - Each measure gets VexFlow's minimum width plus 20% and a margin. Spare room
   in a row is shared per note column, not per measure, so a measure of a few
   long notes doesn't stretch wide next to a busy one. At least four measures per line.
-- A sheet always fits one US Letter page: rows are measured after drawing,
-  stacked tight, and the whole score scales to the space left.
+- A sheet always fits one US Letter page: rows are measured after drawing and
+  the whole score scales to the space left.
+- Staves are evenly spaced down the page: the tallest pair of neighbouring rows
+  sets one pitch for all of them, and when width is the limit the pitch grows
+  so the score fills the page height.
 
 ## Accessibility notes already handled
 
