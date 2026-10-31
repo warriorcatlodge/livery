@@ -175,8 +175,9 @@ mark where a player's eye already is: technique next to the note, names in a ban
 **Scale and fit**
 - Marks on the staff are small (ring 8.8 units wide, square 8.6) so every note
   is annotated the same way, with no switch to a different layout in dense bars.
-- Each measure gets VexFlow's minimum width plus 20% and a margin; each row
-  shares the rest. At least four measures per line.
+- Each measure gets VexFlow's minimum width plus 20% and a margin. Spare room
+  in a row is shared per note column, not per measure, so a measure of a few
+  long notes doesn't stretch wide next to a busy one. At least four measures per line.
 - A sheet always fits one US Letter page: rows are measured after drawing,
   stacked tight, and the whole score scales to the space left.
 
