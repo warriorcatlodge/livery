@@ -24,6 +24,7 @@ body {
   --line-height-normal: 1.6;
   --radius-s: 2px; --radius-m: 3px; --radius-l: 4px; --radius-xl: 6px;
   --callout-radius: 0;
+  --file-line-width: 80%;
   --checkbox-radius: 50%;
 }
 

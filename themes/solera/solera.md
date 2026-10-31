@@ -68,6 +68,7 @@ Never IBM Plex (day job), Inter, or Space Grotesk.
 - **Final barline on blockquotes**: thin + thick bar.
 - **Callouts**: square, 3px barline on the left, faint wash. No rounded cards.
 - **Tables**: tracked-caps header over a 2px rule, no vertical lines.
+- **Note width**: 80% of the pane (with Readable line length on).
 - **Active tab**: a 2px rosewood binding strip on top.
 
 ## Obsidian
