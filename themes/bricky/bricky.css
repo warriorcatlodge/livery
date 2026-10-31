@@ -125,7 +125,8 @@
 }
 @media print {
   [data-theme="bricky"] body { background: #FFFFFF; }
-  .sheet { width: auto; min-height: 0; height: 253.9mm; padding: 0; margin: 0; box-shadow: none; break-after: page; overflow: hidden; }
+  /* not the full 254 mm: browsers print their own header and footer inside the margins */
+  .sheet { width: auto; min-height: 0; height: 234mm; padding: 0; margin: 0; box-shadow: none; break-after: page; overflow: hidden; }
   .sheet:last-child { break-after: auto; }
 }
 @media screen and (max-width: 230mm) {

@@ -79,7 +79,11 @@ Metric, so the page and the screen measure the same:
 
 The page is US Letter at 0.5 in margins (`@page { size: letter; margin: 12.7mm }`).
 On screen a `.sheet` is the paper itself, the same box, so what you see is what
-prints.
+prints. A printed sheet is 234 mm tall, not the full 254 mm, because Safari and
+Chrome print their own header and footer inside the margins; layout is fitted to
+that print box on every device, never to the screen it happens to be drawn on.
+When space runs short, the header compresses (title, meta and key on two lines)
+before the score shrinks.
 
 ## Type
 
