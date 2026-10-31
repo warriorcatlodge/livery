@@ -1,0 +1,264 @@
+/* ============================================================
+   SOLERA — Rev A · Obsidian theme · JDC
+   Classical guitar and lutherie. Woods of the instrument, marks of the score.
+   Shades: Soundboard (light, cedar top under French polish)
+           Fretboard (dark, ebony)
+   Obsidian picks the shade from Settings > Appearance > Base color scheme.
+   Spec: ../solera.md
+   ============================================================ */
+
+body {
+  --font-text-theme: 'Iowan Old Style', 'Palatino', Georgia, serif;
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-monospace-theme: 'SF Mono', ui-monospace, Menlo, monospace;
+  --solera-display: 'Didot', 'Bodoni 72', 'Iowan Old Style', Georgia, serif;
+
+  --h1-font: var(--solera-display);
+  --h2-font: var(--solera-display);
+  --h3-font: var(--font-text);
+  --h1-weight: 400; --h2-weight: 400; --h3-weight: 600;
+  --h4-weight: 600; --h5-weight: 600; --h6-weight: 600;
+  --h1-size: 2.1em; --h2-size: 1.6em; --h3-size: 1.25em;
+  --h4-size: 1.05em; --h5-size: 0.95em; --h6-size: 0.9em;
+  --h4-variant: small-caps; --h5-variant: small-caps; --h6-variant: small-caps;
+  --line-height-normal: 1.65;
+  --radius-s: 2px; --radius-m: 3px; --radius-l: 4px; --radius-xl: 6px;
+  --callout-radius: 0;
+  --checkbox-radius: 50%;
+}
+
+/* ---- SOUNDBOARD (light) ---- */
+.theme-light {
+  --solera-ground: #F3EEE4;
+  --solera-panel: #EAE3D6;
+  --solera-inset: #E1D8C8;
+  --solera-line: #D3C8B6;
+  --solera-line-strong: #B2A48F;
+  --solera-ink: #211A15;
+  --solera-ink-2: #5C5047;
+  --solera-ink-3: #83776B;
+  --solera-rosewood: #7E2F26;  --solera-rosewood-rgb: 126, 47, 38;
+  --solera-cedar: #975226;     --solera-cedar-rgb: 151, 82, 38;
+  --solera-pearl: #2F6B70;     --solera-pearl-rgb: 47, 107, 112;
+  --solera-spruce: #7A5C15;    --solera-spruce-rgb: 122, 92, 21;
+  --solera-olive: #546331;     --solera-olive-rgb: 84, 99, 49;
+  --solera-abalone: #33577F;   --solera-abalone-rgb: 51, 87, 127;
+  --solera-purpleheart: #6A3D6E; --solera-purpleheart-rgb: 106, 61, 110;
+  --solera-padauk: #A2443A;    --solera-padauk-rgb: 162, 68, 58;
+  --solera-select: rgba(47, 107, 112, 0.18);
+  --accent-h: 6; --accent-s: 54%; --accent-l: 32%;
+}
+
+/* ---- FRETBOARD (dark) ---- */
+.theme-dark {
+  --solera-ground: #16120F;
+  --solera-panel: #1D1814;
+  --solera-inset: #251F1A;
+  --solera-line: #342C25;
+  --solera-line-strong: #4C4137;
+  --solera-ink: #EDE5D8;
+  --solera-ink-2: #B2A594;
+  --solera-ink-3: #887C6E;
+  --solera-rosewood: #D27C6C;  --solera-rosewood-rgb: 210, 124, 108;
+  --solera-cedar: #D99A62;     --solera-cedar-rgb: 217, 154, 98;
+  --solera-pearl: #9CCFCB;     --solera-pearl-rgb: 156, 207, 203;
+  --solera-spruce: #D6B65E;    --solera-spruce-rgb: 214, 182, 94;
+  --solera-olive: #A7B57A;     --solera-olive-rgb: 167, 181, 122;
+  --solera-abalone: #8FB0D6;   --solera-abalone-rgb: 143, 176, 214;
+  --solera-purpleheart: #C29AC6; --solera-purpleheart-rgb: 194, 154, 198;
+  --solera-padauk: #E58C78;    --solera-padauk-rgb: 229, 140, 120;
+  --solera-select: rgba(156, 207, 203, 0.20);
+  --accent-h: 9; --accent-s: 52%; --accent-l: 62%;
+}
+
+/* ---- Map tokens to Obsidian ---- */
+.theme-light, .theme-dark {
+  --background-primary: var(--solera-ground);
+  --background-primary-alt: var(--solera-panel);
+  --background-secondary: var(--solera-panel);
+  --background-secondary-alt: var(--solera-inset);
+  --background-modifier-border: var(--solera-line);
+  --background-modifier-border-hover: var(--solera-line-strong);
+  --background-modifier-border-focus: var(--solera-pearl);
+  --background-modifier-hover: rgba(var(--solera-cedar-rgb), 0.08);
+  --background-modifier-active-hover: rgba(var(--solera-cedar-rgb), 0.14);
+  --background-modifier-form-field: var(--solera-ground);
+  --titlebar-background: var(--solera-panel);
+  --titlebar-background-focused: var(--solera-inset);
+  --tab-container-background: var(--solera-panel);
+  --divider-color: var(--solera-line);
+  --ribbon-background: var(--solera-panel);
+
+  --text-normal: var(--solera-ink);
+  --text-muted: var(--solera-ink-2);
+  --text-faint: var(--solera-ink-3);
+  --text-accent: var(--solera-rosewood);
+  --text-accent-hover: var(--solera-padauk);
+  --text-on-accent: var(--solera-ground);
+  --text-selection: var(--solera-select);
+  --text-highlight-bg: rgba(var(--solera-spruce-rgb), 0.28);
+
+  --interactive-accent: var(--solera-rosewood);
+  --interactive-accent-hover: var(--solera-padauk);
+
+  --link-color: var(--solera-rosewood);
+  --link-color-hover: var(--solera-padauk);
+  --link-unresolved-color: var(--solera-ink-3);
+  --link-unresolved-decoration-color: var(--solera-line-strong);
+  --link-external-color: var(--solera-abalone);
+  --link-external-color-hover: var(--solera-abalone);
+
+  --h1-color: var(--solera-ink);
+  --h2-color: var(--solera-ink);
+  --h3-color: var(--solera-cedar);
+  --h4-color: var(--solera-ink-2);
+  --h5-color: var(--solera-ink-2);
+  --h6-color: var(--solera-ink-2);
+
+  --bold-color: var(--solera-ink);
+  --italic-color: var(--solera-ink);
+  --blockquote-border-color: var(--solera-ink);
+  --blockquote-color: var(--solera-ink-2);
+  --hr-color: var(--solera-line-strong);
+  --code-background: var(--solera-panel);
+  --code-normal: var(--solera-ink);
+  --code-comment: var(--solera-ink-3);
+  --code-keyword: var(--solera-rosewood);
+  --code-string: var(--solera-olive);
+  --code-function: var(--solera-cedar);
+  --code-value: var(--solera-purpleheart);
+  --code-property: var(--solera-abalone);
+  --code-tag: var(--solera-rosewood);
+  --code-operator: var(--solera-ink-2);
+  --code-punctuation: var(--solera-ink-2);
+  --code-important: var(--solera-spruce);
+
+  --tag-color: var(--solera-cedar);
+  --tag-color-hover: var(--solera-cedar);
+  --tag-background: rgba(var(--solera-cedar-rgb), 0.10);
+  --tag-background-hover: rgba(var(--solera-cedar-rgb), 0.18);
+  --tag-border-color: rgba(var(--solera-cedar-rgb), 0.35);
+  --tag-border-width: 1px;
+  --tag-radius: 2px;
+
+  --checkbox-color: var(--solera-pearl);
+  --checkbox-color-hover: var(--solera-pearl);
+  --checkbox-border-color: var(--solera-line-strong);
+  --checkbox-marker-color: var(--solera-ground);
+  --checklist-done-color: var(--solera-ink-3);
+  --list-marker-color: var(--solera-ink-3);
+  --list-marker-color-collapsed: var(--solera-rosewood);
+
+  --nav-item-color-active: var(--solera-ink);
+  --nav-item-background-active: rgba(var(--solera-pearl-rgb), 0.12);
+  --nav-item-color-selected: var(--solera-ink);
+  --nav-item-background-selected: rgba(var(--solera-pearl-rgb), 0.16);
+
+  --graph-line: var(--solera-line-strong);
+  --graph-node: var(--solera-ink-2);
+  --graph-node-unresolved: var(--solera-ink-3);
+  --graph-node-focused: var(--solera-rosewood);
+  --graph-node-tag: var(--solera-cedar);
+  --graph-node-attachment: var(--solera-abalone);
+
+  /* Obsidian's named colors, re-sourced from tonewoods (callouts, graph groups, canvas) */
+  --color-red: var(--solera-rosewood);       --color-red-rgb: var(--solera-rosewood-rgb);
+  --color-orange: var(--solera-cedar);       --color-orange-rgb: var(--solera-cedar-rgb);
+  --color-yellow: var(--solera-spruce);      --color-yellow-rgb: var(--solera-spruce-rgb);
+  --color-green: var(--solera-olive);        --color-green-rgb: var(--solera-olive-rgb);
+  --color-cyan: var(--solera-pearl);         --color-cyan-rgb: var(--solera-pearl-rgb);
+  --color-blue: var(--solera-abalone);       --color-blue-rgb: var(--solera-abalone-rgb);
+  --color-purple: var(--solera-purpleheart); --color-purple-rgb: var(--solera-purpleheart-rgb);
+  --color-pink: var(--solera-padauk);        --color-pink-rgb: var(--solera-padauk-rgb);
+}
+
+/* ============ SIGNATURES ============ */
+
+/* Staff: every H1 sits on a five-line staff. */
+.markdown-rendered h1,
+.markdown-source-view.mod-cm6 .HyperMD-header-1,
+.inline-title {
+  padding-bottom: 24px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--solera-line-strong) 0 1px,
+    transparent 1px 4px);
+  background-size: 100% 17px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  letter-spacing: 0.01em;
+}
+
+/* H2: a single ledger line. */
+.markdown-rendered h2 {
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--solera-line);
+}
+
+/* Fret: a horizontal rule is a fret wire with the 12th-fret double pearl inlay. */
+.markdown-rendered hr {
+  position: relative;
+  overflow: visible;
+  border: none;
+  border-top: 2px solid var(--solera-line-strong);
+  margin: 2.4em 0;
+}
+.markdown-rendered hr::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: -6px;
+  width: 8px; height: 8px;
+  margin-left: -14px;
+  border-radius: 50%;
+  background: var(--solera-pearl);
+  box-shadow: 0 0 0 3px var(--background-primary),
+              20px 0 0 var(--solera-pearl),
+              20px 0 0 3px var(--background-primary);
+}
+
+/* Final barline: blockquotes carry a thin + thick double bar. */
+.markdown-rendered blockquote {
+  border-left: none;
+  padding-left: 1.4em;
+  background-image:
+    linear-gradient(var(--solera-ink-2), var(--solera-ink-2)),
+    linear-gradient(var(--solera-ink), var(--solera-ink));
+  background-size: 1px 100%, 4px 100%;
+  background-position: 0 0, 4px 0;
+  background-repeat: no-repeat;
+  font-style: italic;
+}
+.markdown-source-view.mod-cm6 .HyperMD-quote::before { border-left-width: 3px; }
+
+/* Callouts: square, barline on the left, no tinted card. */
+.callout {
+  border-left: 3px solid rgb(var(--callout-color));
+  background: rgba(var(--callout-color), 0.06);
+}
+
+/* Inlay: the active file in the file explorer gets a pearl dot. */
+.nav-file-title.is-active { position: relative; }
+.nav-file-title.is-active::before {
+  content: '';
+  position: absolute;
+  left: 2px; top: 50%;
+  width: 5px; height: 5px; margin-top: -2.5px;
+  border-radius: 50%;
+  background: var(--solera-pearl);
+}
+
+/* Tables: header row in small caps, ruled like a tab staff. */
+.markdown-rendered table { border-collapse: collapse; }
+.markdown-rendered th {
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  color: var(--solera-ink-2);
+  border-bottom: 2px solid var(--solera-line-strong);
+}
+.markdown-rendered td, .markdown-rendered th { border-left: none; border-right: none; }
+
+/* Properties: labels in small caps, the ink-2 tier. */
+.metadata-property-key { font-variant: small-caps; color: var(--solera-ink-2); }
+
+/* Selected tab gets a rosewood top edge, like a binding strip. */
+.workspace-tab-header.is-active { box-shadow: inset 0 2px 0 var(--solera-rosewood); }
