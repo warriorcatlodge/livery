@@ -168,9 +168,10 @@ mark where a player's eye already is: technique next to the note, names in a ban
 **Note-name bands**
 - Note names in green at concert octave (open G = G3, low E = E2), with no
   explanation on the page: the octave convention is standard.
-- Upper voice: names in a band above the staff. Bass and inner voices: a band
-  below. Each name is centred on its notehead; chords stack names, highest
-  on top. Bands are aligned across the whole row, so names line up.
+- Upper voice: names in a band above the staff, centred on each notehead.
+- Bass and inner voices: one line below, set halfway down the longest stem in
+  the row (and clear of every notehead). A name whose own stem crosses that line
+  sits just right of the stem. Chords stack names, highest on top.
 
 **Scale and fit**
 - Marks on the staff are small (ring 8.8 units wide, square 8.6) so every note
