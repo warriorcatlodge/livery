@@ -183,8 +183,10 @@ mark where a player's eye already is: technique next to the note, names in a ban
 - A sheet always fits one US Letter page: rows are measured after drawing and
   the whole score scales to the space left.
 - Staves are evenly spaced down the page: the tallest pair of neighbouring rows
-  sets one pitch for all of them, and when width is the limit the pitch grows
-  so the score fills the page height.
+  sets one pitch for all of them. When width is the limit the pitch grows into
+  the spare height, by at most a quarter; anything left stays as space above the tag.
+- The tag is docked to the bottom of the page, in print and on screen (a phone
+  shows the whole page at Letter proportions).
 
 ## Accessibility notes already handled
 

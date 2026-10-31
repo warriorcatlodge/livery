@@ -130,6 +130,7 @@
   .sheet:last-child { break-after: auto; }
 }
 @media screen and (max-width: 230mm) {
-  .sheet { width: 100%; min-height: 0; margin: 0 0 var(--unit); padding: 4mm; }
+  /* a phone shows the whole page at Letter proportions, tag docked at the bottom */
+  .sheet { width: 100%; min-height: 0; aspect-ratio: 215.9 / 279.4; margin: 0 0 var(--unit); padding: 4mm; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
