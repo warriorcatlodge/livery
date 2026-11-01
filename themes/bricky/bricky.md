@@ -186,6 +186,9 @@ mark where a player's eye already is: technique next to the note, names in a ban
 - Staves are evenly spaced down the page: the tallest pair of neighbouring rows
   sets one pitch for all of them. When width is the limit the pitch grows into
   the spare height, by at most a quarter; anything left stays as space above the tag.
+- A longer score can be split over pages with a set number of lines on each
+  (`data-pages="5,3"`). Every page repeats the header and key, shares one
+  staff pitch and scale, and numbers its tag "Page 1 of 2".
 - The tag is docked to the bottom of the page, in print and on screen (a phone
   shows the whole page at Letter proportions).
 
