@@ -108,6 +108,83 @@ gradient to the fill amputates the spectrum and kills the metaphor.
 
 **Status is color plus text**, never color alone. `IN TOL`, `RECUT`, `PENDING`.
 
+## Charts — series, heat, diverging
+
+The accent roles above run out at three, and the temper stops at five. Charts
+need more identities than that, so Toolpath carries a separate **chart set**:
+colors that belong to the shop but are **data marks only**. Never use a chart
+token for chrome, buttons, links, headings, borders or status. If it isn't a
+bar, area, line, dot or cell that encodes a value, it doesn't get one.
+
+### Series (categorical) — fixed order, never cycled
+
+Each hue is something hot or worked metal actually shows, so the set reads as
+the temper strip's relatives rather than a stock palette.
+
+| # | Name | Source | Shop Floor | Vellum |
+|---|---|---|---|---|
+| 1 | Amber | temper stop | `#E0A036` | `#B27907` |
+| 2 | Violet | temper stop | `#AA639E` | `#9E5792` |
+| 3 | Verdigris | what bronze corrodes to (terminal green) | `#4DA36A` | `#449B62` |
+| 4 | Peacock | temper blue | `#3D86C5` | `#3D86C5` |
+| 5 | Bronze | temper stop | `#C06A3E` | `#C06A3E` |
+| 6 | Quench | peacock lifted toward the terminal cyan | `#29B4D4` | `#0895B2` |
+| 7 | Cherry | forge heat, cherry red | `#C9574F` | `#B0413A` |
+| 8 | Straw | temper stop | `#DBBA5C` | `#A28218` |
+| — | Other | line strong family | `#5A6170` | `#A9A396` |
+
+CSS: `--chart-1` … `--chart-8`, `--chart-other`.
+
+- Assign in this order. A ninth series folds into **Other**; it never gets a
+  generated hue.
+- **Color follows the entity, not its rank.** Sort the series once (largest
+  first is fine), assign, and keep that mapping while filters change.
+- Stacked fills get a 2px gap in the panel color between segments.
+- Text stays in ink. Legends, values and labels use the ink tiers with a swatch
+  beside them; never color text with a series token.
+- Validated with the dataviz checker (OKLab, adjacent pairs): Vellum passes
+  every check (worst CVD ΔE 9.8, worst normal-vision ΔE 16.9, all ≥3:1 on the
+  panel). Shop Floor passes CVD (10.5), normal vision (18.3) and contrast; amber,
+  quench and straw sit above the checker's dark lightness band on purpose so
+  they read as glowing temper colors on the near-black panel, not muddied ones.
+- Comparing any pair, not just neighbours, the first three slots drop to the
+  floor band (ΔE ~7.8). Above three series, keep the legend and hover labels;
+  identity never rests on color alone.
+
+### Heat (sequential) — forge bronze
+
+For heatmaps and anything that reads as "more". One hue (bronze), lightness
+only, with the low end nearest the ground in each shade.
+
+| Step | Shop Floor | Vellum |
+|---|---|---|
+| 1 (least) | `#8A3A03` | `#F19264` |
+| 2 | `#AA5221` | `#D4784A` |
+| 3 | `#C86D3F` | `#B75E2F` |
+| 4 | `#E6895A` | `#99430D` |
+| 5 (most) | `#FFA97F` | `#753002` |
+
+CSS: `--heat-1` … `--heat-5`. Empty cells stay `--bg-inset`, not step 1.
+Hot bars (above) still use the full temper gradient; this ramp is for cells.
+
+### Diverging — Dykem ↔ bronze
+
+Over/under a target, ahead/behind plan. Dykem for below or behind, bronze for
+above or ahead, a neutral grey at zero. Never a hue at the midpoint.
+
+| Step | Shop Floor | Vellum |
+|---|---|---|
+| −2 | `#69AAE6` | `#25679E` |
+| −1 | `#2C6DA5` | `#63A4DF` |
+| 0 | `#4A505C` | `#C9C4B8` |
+| +1 | `#A34C1A` | `#E6895A` |
+| +2 | `#E6895A` | `#AD5525` |
+
+CSS: `--div-neg-2`, `--div-neg-1`, `--div-mid`, `--div-pos-1`, `--div-pos-2`.
+
+Status (`IN TOL`, `RECUT`) keeps its own text-plus-color rule and never borrows
+a chart token.
+
 ## The signature — title block
 
 Every Toolpath artifact ends with a drafting title block: a four-cell monospace

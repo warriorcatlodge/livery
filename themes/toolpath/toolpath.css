@@ -31,6 +31,12 @@
   --dykem: #5B8FBF; --bronze: #CE7A46; --violet: #B87AAD;
   --on-bronze: #F7F2EA;
   --grid: rgba(91,143,191,0.06); --hatch: rgba(91,143,191,0.10);
+  /* Chart series: data marks only, never chrome. See toolpath.md "Charts". */
+  --chart-1: #E0A036; --chart-2: #AA639E; --chart-3: #4DA36A; --chart-4: #3D86C5;
+  --chart-5: #C06A3E; --chart-6: #29B4D4; --chart-7: #C9574F; --chart-8: #DBBA5C;
+  --chart-other: #5A6170;
+  --heat-1: #8A3A03; --heat-2: #AA5221; --heat-3: #C86D3F; --heat-4: #E6895A; --heat-5: #FFA97F;
+  --div-neg-2: #69AAE6; --div-neg-1: #2C6DA5; --div-mid: #4A505C; --div-pos-1: #A34C1A; --div-pos-2: #E6895A;
 }
 
 /* ---- SHADE: VELLUM (light) ---- */
@@ -41,6 +47,11 @@
   --dykem: #35617F; --bronze: #9C5530; --violet: #7E4A74;
   --on-bronze: #F7F2EA;
   --grid: rgba(53,97,127,0.09); --hatch: rgba(53,97,127,0.12);
+  --chart-1: #B27907; --chart-2: #9E5792; --chart-3: #449B62; --chart-4: #3D86C5;
+  --chart-5: #C06A3E; --chart-6: #0895B2; --chart-7: #B0413A; --chart-8: #A28218;
+  --chart-other: #A9A396;
+  --heat-1: #F19264; --heat-2: #D4784A; --heat-3: #B75E2F; --heat-4: #99430D; --heat-5: #753002;
+  --div-neg-2: #25679E; --div-neg-1: #63A4DF; --div-mid: #C9C4B8; --div-pos-1: #E6895A; --div-pos-2: #AD5525;
 }
 
 /* ============ FOUNDATION ============ */
