@@ -41,9 +41,9 @@ App Store (needs nix-darwin's homebrew module and an App Store sign-in).
 
 `darwinModules.toolpath` with `livery.toolpath.enable = true` links
 `themes/toolpath` to `/etc/livery/toolpath`. Dotfiles point each tool at a
-file there (Ghostty theme and shader, starship, tmux, borders, SketchyBar), so
-the assets live only here and a `darwin-rebuild` after a lock bump restyles
-everything.
+file there (Ghostty theme and shader, WezTerm colors, starship, tmux, borders,
+SketchyBar), so the assets live only here and a `darwin-rebuild` after a lock
+bump restyles everything.
 
 ### Wallpaper
 
