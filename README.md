@@ -10,6 +10,7 @@ skill in `warriorcatlodge/skills` only points here.
 | Conductor | `themes/conductor/conductor.css`, `conductor-dust.js` | `homeManagerModules.conductor`, `darwinModules.conductor` | | | PNG, Dynamic Desktop HEIC, live board |
 | Toolpath | `themes/toolpath/toolpath.css` | `darwinModules.toolpath`, `themes/toolpath/macos` (scripts) | `themes/toolpath/windows` | `themes/toolpath/omarchy` | PNG, Dynamic Desktop HEIC |
 | Benchmark | `themes/benchmark/benchmark.css` | | | | |
+| Bricky | `themes/bricky/bricky.css` (print-first) | | | | |
 
 ## Mac, with nix-darwin and home-manager
 

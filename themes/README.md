@@ -1,6 +1,6 @@
 # Themes
 
-Jeff's visual identity: three themes, each with a dark and a light shade,
+Jeff's visual identity: four themes, each with a dark and a light shade,
 each derived from real material and carrying one signature element that
 marks the work as his. This directory is the single source for every surface,
 from an HTML artifact to a terminal to a wallpaper. The `artifact-themes`
@@ -14,10 +14,11 @@ from it; nothing about the themes lives there.
 | **Toolpath** | Shop Floor (dark) · Vellum (light) | Shop Floor | Personal projects: woodworking, 3D printing, home automation, classical guitar, technical study |
 | **Benchmark** | Section (light) · Till (dark) | Section | Land, property and construction: the Granville estate, renovation scopes, budgets, site and systems work, anything about a place rather than a workpiece |
 | **Conductor** | Moffat (dark) · Stainless (light) | Moffat | The `conductor` Mac Mini and everything it runs: orchestration, builds, CI, runners, dashboards and status pages for the machine, its terminal |
+| **Bricky** | Paper (light, the only shade) | Paper | Music education and music theory first: score sheets, worksheets, anything meant to be printed and learned from. Print is a first-class medium |
 
 "Usual" is the shade meant when Jeff says "usual" or names only the theme:
 Toolpath is looked at for long stretches, property work is read on paper, the
-machine is watched at night.
+machine is watched at night, and a Bricky sheet is printed.
 
 ## Protocol: ask before building
 
@@ -40,6 +41,7 @@ rather than retyping tokens.
 | Toolpath | `toolpath/toolpath.md` | `toolpath/toolpath.css` |
 | Benchmark | `benchmark/benchmark.md` | `benchmark/benchmark.css` |
 | Conductor | `conductor/conductor.md` | `conductor/conductor.css` + `conductor/conductor-dust.js` |
+| Bricky | `bricky/bricky.md` | `bricky/bricky.css` (includes the print rules) |
 
 Set `data-theme="<theme>" data-shade="<shade>"` on the root element. Each
 reference holds the tokens, type, conventions and the signature element, and
